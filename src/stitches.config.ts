@@ -1,14 +1,20 @@
 import { createStitches } from "@stitches/react";
 import { tailwind } from "common-breakpoints";
 
+type TailwindBreakpoints = {
+  [key: string]: number;
+};
+
+const typedTailwind: TailwindBreakpoints = tailwind;
+
 const keys = Object.keys(tailwind);
 
 const tailwindQueries = keys.reduce((object, value, index) => {
-  const minWidth = index === 0 ? 0 : tailwind[keys[index - 1]] + 1;
+  const minWidth = index === 0 ? 0 : typedTailwind[keys[index - 1]] + 1;
   const mediaQuery =
     index === 4
       ? `(min-width: ${minWidth}px)`
-      : `(min-width: ${minWidth}px) and (max-width: ${tailwind[value]}px)`;
+      : `(min-width: ${minWidth}px) and (max-width: ${typedTailwind[value]}px)`;
 
   return {
     ...object,
