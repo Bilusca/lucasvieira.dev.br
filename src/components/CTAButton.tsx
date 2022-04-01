@@ -3,15 +3,21 @@ import Telegram from "../../public/static/images/telegram.svg";
 import Instagram from "../../public/static/images/instagram.svg";
 import { Button } from "../layout/Button";
 import type { CSS } from "@stitches/react";
+import { ReactElement } from "react";
 
 type CTAButtonProps = {
   text: string;
-  icon?: "whatsapp" | "telegram" | "instagram" | undefined;
+  icon: string;
   css?: CSS;
+  as?: any;
+};
+
+type IconSelected = {
+  [key: string]: ReactElement;
 };
 
 export function CTAButton({ text, icon, css, ...rest }: CTAButtonProps) {
-  const iconSelected = {
+  const iconSelected: IconSelected = {
     ["whatsapp"]: <Whatsapp />,
     ["telegram"]: <Telegram />,
     ["instagram"]: <Instagram />,
@@ -19,7 +25,7 @@ export function CTAButton({ text, icon, css, ...rest }: CTAButtonProps) {
 
   return (
     <Button css={css ?? {}} {...rest}>
-      {text} {icon && iconSelected[icon]}
+      {text} {iconSelected[icon]}
     </Button>
   );
 }

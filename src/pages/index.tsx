@@ -107,6 +107,8 @@ export default function Home({ title, description }: HomeProps) {
             width={427}
             height={430}
             alt="Diga adeus a páginas lentas e aumente as conversões da sua campanha."
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"
           />
         </Box>
       </Section>
@@ -158,6 +160,8 @@ export default function Home({ title, description }: HomeProps) {
             width={520}
             height={520}
             alt="Lucas Assis Vieira, desenvolvedor full-stack"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"
           />
         </Box>
         <Box css={{ flex: 1 }}>
