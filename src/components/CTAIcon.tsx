@@ -24,7 +24,13 @@ export function CTAIcon({ icon, link, target, css, ...rest }: CTAIconProps) {
   };
 
   return (
-    <IconLink href={link} target={target} css={css ?? {}} {...rest}>
+    <IconLink
+      href={link}
+      target={target}
+      rel="noreferrer"
+      css={css ?? {}}
+      {...rest}
+    >
       {iconSelected[icon]}
     </IconLink>
   );

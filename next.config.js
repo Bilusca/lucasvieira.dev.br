@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   compress: true,
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

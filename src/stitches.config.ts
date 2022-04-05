@@ -67,7 +67,6 @@ const globalStyles = globalCss({
     margin: "0",
     padding: "0",
     backgroundColor: "$black",
-    backgroundImage: "url(static/images/bg.jpg) ",
     backgroundSize: "cover",
     "@bp1": {
       fontSize: "87.5%;",

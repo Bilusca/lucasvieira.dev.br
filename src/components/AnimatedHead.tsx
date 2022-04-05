@@ -1,10 +1,16 @@
+import Image from "next/image";
+import type { CSS } from "@stitches/react";
+import dynamic from "next/dynamic";
+
 import { Text } from "../layout/Text";
 import { Box } from "../layout/Box";
 import { Section } from "../layout/Section";
-import Image from "next/image";
 import { CTAButton } from "./CTAButton";
-import type { CSS } from "@stitches/react";
 import { motion as m } from "framer-motion";
+
+const HeadImage = dynamic(
+  () => import("../../public/static/images/head-image.svg")
+);
 
 export function AnimatedHead() {
   const sectionCss: CSS = {
@@ -92,6 +98,10 @@ export function AnimatedHead() {
           alignItems: "center",
           justifyContent: "flex-end",
           flex: 1,
+          svg: {
+            maxWidth: 427,
+            maxHeight: 430,
+          },
           "@bp1": {
             justifyContent: "center",
           },
@@ -100,15 +110,7 @@ export function AnimatedHead() {
           },
         }}
       >
-        <Image
-          src="/static/images/head-image.svg"
-          width={427}
-          height={430}
-          alt="Diga adeus a páginas lentas e aumente as conversões da sua campanha."
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"
-          priority
-        />
+        <HeadImage />
       </Box>
     </Section>
   );

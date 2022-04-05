@@ -16,27 +16,21 @@ import { AnimatedSection } from "../components/AnimatedSection";
 import GoogleADS from "../../public/static/images/google-adwords-logo.png";
 import FacebookADS from "../../public/static/images/facebook-ads.png";
 import LucasVieira from "../../public/static/images/lucas-vieira-about.png";
+import BG from "../../public/static/images/bg.jpg";
 
-type HomeProps = {
-  title: string;
-  description: string;
-  image: string;
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      title: "Lucas Vieira | Desenvolvedor Full-stack",
-      description:
-        "Páginas de alta performance otimizadas para os principais buscadores.",
-    },
-  };
-};
-
-export default function Home({ title, description }: HomeProps) {
+export default function Home() {
   return (
-    <Wrapper as="main">
-      <SEO title={title} description={description} />
+    <Wrapper
+      as="main"
+      css={{
+        backgroundImage: "url(static/images/bg.jpg)",
+        backgroundSize: "cover",
+      }}
+    >
+      <SEO
+        title="Lucas Vieira | Desenvolvedor Full-stack"
+        description="Páginas de alta performance otimizadas para os principais buscadores."
+      />
       <Navbar />
       <AnimatedHead />
       <Separator />
@@ -74,6 +68,7 @@ export default function Home({ title, description }: HomeProps) {
         <Box css={{ flex: 1 }}>
           <Image
             src={LucasVieira}
+            priority
             alt="Lucas Assis Vieira, desenvolvedor full-stack"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"

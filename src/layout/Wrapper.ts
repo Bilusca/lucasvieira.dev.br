@@ -8,4 +8,8 @@ export const Wrapper = styled("div", {
   width: "100%",
   position: "relative",
   zIndex: 0,
+
+  "img:first-child": {
+    zIndex: -10,
+  },
 });

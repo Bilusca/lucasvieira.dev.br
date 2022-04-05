@@ -56,13 +56,20 @@ export function CTAButton({
           whileTap={whileTap}
           href={link}
           target={target}
+          rel="noreferrer"
           css={css ?? {}}
           {...rest}
         >
           {text} {iconSelected[icon]}
         </Button>
       ) : (
-        <Button href={link} target={target} css={css ?? {}} {...rest}>
+        <Button
+          href={link}
+          target={target}
+          rel="noreferrer"
+          css={css ?? {}}
+          {...rest}
+        >
           {text} {iconSelected[icon]}
         </Button>
       )}
