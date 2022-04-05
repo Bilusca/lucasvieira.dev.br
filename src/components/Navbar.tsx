@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { styled } from "../stitches.config";
 import { Text } from "../layout/Text";
 

@@ -1,3 +1,12 @@
+const withPlugins = require("next-compose-plugins");
+const { withPlausibleProxy } = require("next-plausible");
+const withBundleAnalyzer = require("@next/bundle-analyzer");
+
+const plausibleProxy = withPlausibleProxy;
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -15,4 +24,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins([plausibleProxy, bundleAnalyzer], nextConfig);

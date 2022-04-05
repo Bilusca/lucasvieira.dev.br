@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import { Box } from "../layout/Box";
 import { Text } from "../layout/Text";
 import { AnimatedSection } from "./AnimatedSection";

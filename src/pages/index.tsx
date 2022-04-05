@@ -1,4 +1,5 @@
-import type { GetStaticProps } from "next";
+import Image from "next/image";
+
 import { GradientText } from "../layout/GradientText";
 import { Navbar } from "../components/Navbar";
 import { Text } from "../layout/Text";
@@ -6,7 +7,6 @@ import { Wrapper } from "../layout/Wrapper";
 import { Box } from "../layout/Box";
 import { Separator } from "../layout/Separator";
 import { IconBox } from "../layout/IconBox";
-import Image from "next/image";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 import { SEO } from "../components/SEO";
@@ -16,7 +16,6 @@ import { AnimatedSection } from "../components/AnimatedSection";
 import GoogleADS from "../../public/static/images/google-adwords-logo.png";
 import FacebookADS from "../../public/static/images/facebook-ads.png";
 import LucasVieira from "../../public/static/images/lucas-vieira-about.png";
-import BG from "../../public/static/images/bg.jpg";
 
 export default function Home() {
   return (
@@ -71,7 +70,6 @@ export default function Home() {
             priority
             alt="Lucas Assis Vieira, desenvolvedor full-stack"
             placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"
           />
         </Box>
         <Box css={{ flex: 1 }}>
@@ -84,7 +82,7 @@ export default function Home() {
           </Text>
           <Text>
             Olá, me chamo Lucas, goiano do pé rachado. Estou na área de
-            desenvolvimento desde 2014, passando por várias tecnológias,
+            desenvolvimento desde 2014, passando por várias tecnologias,
             ajudando na comunidade local de programadores e palestrando em
             alguns eventos. Sou desenvolvedor full-stack (ou seja, faz tudo)
             focado em performance, qualidade de produto e usabilidade. Na minha

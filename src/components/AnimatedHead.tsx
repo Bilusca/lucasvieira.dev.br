@@ -1,16 +1,13 @@
-import Image from "next/image";
 import type { CSS } from "@stitches/react";
-import dynamic from "next/dynamic";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Text } from "../layout/Text";
 import { Box } from "../layout/Box";
 import { Section } from "../layout/Section";
 import { CTAButton } from "./CTAButton";
-import { motion as m } from "framer-motion";
 
-const HeadImage = dynamic(
-  () => import("../../public/static/images/head-image.svg")
-);
+import HeadImage from "../../public/static/images/head-image.png";
 
 export function AnimatedHead() {
   const sectionCss: CSS = {
@@ -30,7 +27,7 @@ export function AnimatedHead() {
   const list = {
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.8 },
+      transition: { staggerChildren: 0.5 },
     },
     hidden: { opacity: 0 },
   };
@@ -42,14 +39,14 @@ export function AnimatedHead() {
 
   return (
     <Section
-      as={m.section}
+      as={motion.section}
       initial="hidden"
       animate="visible"
       variants={list}
       css={sectionCss}
     >
       <Box
-        as={m.div}
+        as={motion.div}
         custom={0}
         variants={item}
         type="flexColumn"
@@ -67,7 +64,7 @@ export function AnimatedHead() {
           Páginas de alta performance otimizadas para os principais buscadores.
         </Text>
         <Text>
-          Diga adeus a páginas lentas e aumente as conversões da sua campanha.
+          Diga adeus à páginas lentas e aumente as conversões da sua campanha.
         </Text>
         <CTAButton
           link="https://api.whatsapp.com/send?phone=5562981602934&text=Olá,%20queria%20o%20orçamento%20de%20uma%20landing%20page/sistema"
@@ -86,11 +83,11 @@ export function AnimatedHead() {
               width: "330px",
             },
           }}
-          as={m.a}
+          as={motion.a}
         />
       </Box>
       <Box
-        as={m.div}
+        as={motion.div}
         custom={-100}
         variants={item}
         type="flex"
@@ -110,7 +107,10 @@ export function AnimatedHead() {
           },
         }}
       >
-        <HeadImage />
+        <Image
+          src={HeadImage}
+          alt="Diga adeus à páginas lentas e aumente as conversões da sua campanha."
+        />
       </Box>
     </Section>
   );

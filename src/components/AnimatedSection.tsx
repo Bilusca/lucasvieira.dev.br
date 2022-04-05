@@ -1,7 +1,7 @@
-import type { CSS } from "@stitches/react";
-import { useAnimation, motion as m } from "framer-motion";
 import { ReactNode, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import type { CSS } from "@stitches/react";
+import { useAnimation, motion as m } from "framer-motion";
 import { Section } from "../layout/Section";
 
 type AnimatedProps = {
