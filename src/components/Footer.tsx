@@ -25,9 +25,21 @@ const FooterCss: CSS = {
 };
 
 const icons = [
-  { name: "whatsapp" },
-  { name: "telegram" },
-  { name: "instagram" },
+  {
+    name: "whatsapp",
+    link: "https://api.whatsapp.com/send?phone=5562981602934&text=Olá,%20queria%20o%20orçamento%20de%20uma%20landing%20page/sistema",
+    target: "_blank",
+  },
+  {
+    name: "telegram",
+    link: "https://t.me/Bilusca",
+    target: "_blank",
+  },
+  {
+    name: "instagram",
+    link: "https://www.instagram.com/bilusca/",
+    target: "_blank",
+  },
 ];
 
 export function Footer() {
@@ -76,6 +88,8 @@ export function Footer() {
         <Box type="flex" css={{ gap: 20 }}>
           {icons.map((icon) => (
             <CTAIcon
+              link={icon.link}
+              target={icon.target}
               key={icon.name}
               icon={icon.name}
               css={{

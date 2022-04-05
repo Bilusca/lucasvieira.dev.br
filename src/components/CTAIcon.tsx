@@ -7,6 +7,8 @@ import { ReactElement } from "react";
 
 type CTAIconProps = {
   icon: string;
+  link: string;
+  target: string;
   css?: CSS;
 };
 
@@ -14,7 +16,7 @@ type IconSelected = {
   [key: string]: ReactElement;
 };
 
-export function CTAIcon({ icon, css, ...rest }: CTAIconProps) {
+export function CTAIcon({ icon, link, target, css, ...rest }: CTAIconProps) {
   const iconSelected: IconSelected = {
     ["whatsapp"]: <Whatsapp />,
     ["telegram"]: <Telegram />,
@@ -22,7 +24,7 @@ export function CTAIcon({ icon, css, ...rest }: CTAIconProps) {
   };
 
   return (
-    <IconLink css={css ?? {}} {...rest}>
+    <IconLink href={link} target={target} css={css ?? {}} {...rest}>
       {iconSelected[icon]}
     </IconLink>
   );

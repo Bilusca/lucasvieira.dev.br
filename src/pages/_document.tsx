@@ -23,9 +23,6 @@ export default class extends Document {
       <Html lang="pt-BR">
         <Head>
           <meta charSet="utf-8" />
-          <meta content="Lucas Vieira" name="author" />
-          <meta property="og:type" content="website" />
-          <meta content="summary_large_image" name="twitter:card" />
           <meta name="theme-color" content="#8A39E1" />
           <style
             id="stitches"

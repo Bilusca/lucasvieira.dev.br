@@ -1,26 +1,33 @@
+import { motion } from "framer-motion";
 import { Box } from "../layout/Box";
-import { Section } from "../layout/Section";
 import { Text } from "../layout/Text";
+import { AnimatedSection } from "./AnimatedSection";
 import { CTAButton } from "./CTAButton";
 
 const contacts = [
   {
     text: "WhatsApp",
     icon: "whatsapp",
+    link: "https://api.whatsapp.com/send?phone=5562981602934&text=Olá,%20queria%20o%20orçamento%20de%20uma%20landing%20page/sistema",
+    target: "_blank",
   },
   {
     text: "Telegram",
     icon: "telegram",
+    link: "https://t.me/Bilusca",
+    target: "_blank",
   },
   {
     text: "Instagram",
     icon: "instagram",
+    link: "https://www.instagram.com/bilusca/",
+    target: "_blank",
   },
 ];
 
 export function Contact() {
   return (
-    <Section css={{ flexDirection: "column", marginBottom: "90px" }}>
+    <AnimatedSection css={{ flexDirection: "column", marginBottom: "90px" }}>
       <Box
         css={{
           width: "55%",
@@ -49,6 +56,9 @@ export function Contact() {
       >
         {contacts.map((contact) => (
           <CTAButton
+            link={contact.link}
+            target={contact.target}
+            animated
             key={contact.icon}
             text={contact.text}
             icon={contact.icon}
@@ -63,10 +73,10 @@ export function Contact() {
                 width: "190px",
               },
             }}
-            as="a"
+            as={motion.a}
           />
         ))}
       </Box>
-    </Section>
+    </AnimatedSection>
   );
 }

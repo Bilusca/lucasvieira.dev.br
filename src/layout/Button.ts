@@ -15,10 +15,6 @@ export const Button = styled("button", {
   color: "$white",
   fontWeight: 600,
   cursor: "pointer",
-  transition: "filter 0.2s",
-  "&:hover": {
-    filter: "drop-shadow(1px 2px 5px rgba(230, 230, 230, 0.3)) brightness(0.6)",
-  },
 
   svg: {
     width: 24,
