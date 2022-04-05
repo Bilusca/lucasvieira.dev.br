@@ -3,7 +3,6 @@ import { useAnimation, motion as m } from "framer-motion";
 import { ReactNode, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Section } from "../layout/Section";
-import { Text } from "../layout/Text";
 
 type AnimatedProps = {
   children: ReactNode;

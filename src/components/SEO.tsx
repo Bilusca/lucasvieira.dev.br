@@ -10,6 +10,11 @@ export function SEO({ title, description }: SEOProps) {
     <Head>
       <title>{title}</title>
 
+      <meta
+        name="viewport"
+        content="initial-scale=1.0, width=device-width"
+      ></meta>
+
       <meta content={description} name="description" />
       <meta property="author" content="Lucas Vieira (Bilusca)" />
       <meta

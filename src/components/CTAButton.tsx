@@ -4,7 +4,6 @@ import Instagram from "../../public/static/images/instagram.svg";
 import { Button } from "../layout/Button";
 import type { CSS } from "@stitches/react";
 import { ReactElement } from "react";
-import { motion as m } from "framer-motion";
 
 type CTAButtonProps = {
   text: string;

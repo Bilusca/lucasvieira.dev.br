@@ -24,6 +24,10 @@ export default class extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#8A39E1" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter:wght@300;600;700&display=swap"
+            rel="stylesheet"
+          />
           <style
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}

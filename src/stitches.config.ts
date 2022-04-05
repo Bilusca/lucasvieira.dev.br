@@ -78,8 +78,6 @@ const globalStyles = globalCss({
     minWidth: "100%",
     maxWidth: "100%",
   },
-  "@import":
-    "url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bitter:wght@300;600;700&display=swap')",
 });
 
 globalStyles();

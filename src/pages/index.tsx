@@ -1,11 +1,9 @@
 import type { GetStaticProps } from "next";
-import { CTAButton } from "../components/CTAButton";
 import { GradientText } from "../layout/GradientText";
 import { Navbar } from "../components/Navbar";
 import { Text } from "../layout/Text";
 import { Wrapper } from "../layout/Wrapper";
 import { Box } from "../layout/Box";
-import { Section } from "../layout/Section";
 import { Separator } from "../layout/Separator";
 import { IconBox } from "../layout/IconBox";
 import Image from "next/image";
@@ -14,6 +12,10 @@ import { Footer } from "../components/Footer";
 import { SEO } from "../components/SEO";
 import { AnimatedHead } from "../components/AnimatedHead";
 import { AnimatedSection } from "../components/AnimatedSection";
+
+import GoogleADS from "../../public/static/images/google-adwords-logo.png";
+import FacebookADS from "../../public/static/images/facebook-ads.png";
+import LucasVieira from "../../public/static/images/lucas-vieira-about.png";
 
 type HomeProps = {
   title: string;
@@ -53,20 +55,10 @@ export default function Home({ title, description }: HomeProps) {
         </Text>
         <Box type="flex" css={{ justifyContent: "center", width: "100%" }}>
           <IconBox>
-            <Image
-              width={93}
-              height={115}
-              src="/static/images/google-adwords-logo.png"
-              alt="Google Ads"
-            />
+            <Image src={GoogleADS} alt="Google Ads" />
           </IconBox>
           <IconBox>
-            <Image
-              width={141}
-              height={81}
-              src="/static/images/facebook-ads.png"
-              alt="Facebook Ads"
-            />
+            <Image src={FacebookADS} alt="Facebook Ads" />
           </IconBox>
         </Box>
       </AnimatedSection>
@@ -81,9 +73,7 @@ export default function Home({ title, description }: HomeProps) {
       >
         <Box css={{ flex: 1 }}>
           <Image
-            src="/static/images/lucas-vieira-about.png"
-            width={520}
-            height={520}
+            src={LucasVieira}
             alt="Lucas Assis Vieira, desenvolvedor full-stack"
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"
