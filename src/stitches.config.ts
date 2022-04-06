@@ -62,6 +62,7 @@ const globalStyles = globalCss({
     fontFamily: "$body",
     boxSizing: "border-box",
     WebkitFontSmoothing: "antialiased",
+    zIndex: 1,
   },
   "html, body": {
     margin: "0",

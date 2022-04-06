@@ -110,6 +110,7 @@ export function AnimatedHead() {
         <Image
           src={HeadImage}
           alt="Diga adeus à páginas lentas e aumente as conversões da sua campanha."
+          priority
         />
       </Box>
     </Section>

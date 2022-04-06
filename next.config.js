@@ -13,6 +13,7 @@ const nextConfig = {
   compress: true,
   images: {
     formats: ["image/avif", "image/webp"],
+    deviceSizes: [320, 640, 768, 1024, 1600],
   },
   webpack(config) {
     config.module.rules.push({

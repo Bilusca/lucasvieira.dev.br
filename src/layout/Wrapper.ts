@@ -9,7 +9,7 @@ export const Wrapper = styled("div", {
   position: "relative",
   zIndex: 0,
 
-  "img:first-child": {
-    zIndex: -10,
+  ".img-wrapper": {
+    zIndex: -1,
   },
 });

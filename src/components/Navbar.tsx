@@ -3,19 +3,13 @@ import Image from "next/image";
 import { styled } from "../stitches.config";
 import { Text } from "../layout/Text";
 
+import Logo from "../../public/static/images/logo.png";
+
 export function Navbar() {
   return (
     <Header>
       <HeaderBox>
-        <Image
-          src="/static/images/logo.png"
-          width={45}
-          height={45}
-          alt="Lucas Vieira"
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAP0lEQVQImQE0AMv/AFBQUJKSkqmpqaOjowCurq7v7+/Jycm5ubkA////jIyMn5+fg4ODADAwMD09PWlpaQAAAApRGnEHblMWAAAAAElFTkSuQmCC"
-          priority
-        />
+        <Image src={Logo} alt="Lucas Vieira | Fullstack developer" priority />
         <Text
           as="span"
           type="noMargin"

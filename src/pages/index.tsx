@@ -16,19 +16,22 @@ import { AnimatedSection } from "../components/AnimatedSection";
 import GoogleADS from "../../public/static/images/google-adwords-logo.png";
 import FacebookADS from "../../public/static/images/facebook-ads.png";
 import LucasVieira from "../../public/static/images/lucas-vieira-about.png";
+import BG from "../../public/static/images/bg.jpg";
 
 export default function Home() {
   return (
-    <Wrapper
-      as="main"
-      css={{
-        backgroundImage: "url(static/images/bg.jpg)",
-        backgroundSize: "cover",
-      }}
-    >
+    <Wrapper as="main">
       <SEO
         title="Lucas Vieira | Desenvolvedor Full-stack"
         description="Páginas de alta performance otimizadas para os principais buscadores."
+      />
+      <Image
+        src={BG}
+        layout="fill"
+        objectFit="cover"
+        alt=""
+        priority
+        className="img-wrapper"
       />
       <Navbar />
       <AnimatedHead />
@@ -67,9 +70,7 @@ export default function Home() {
         <Box css={{ flex: 1 }}>
           <Image
             src={LucasVieira}
-            priority
             alt="Lucas Assis Vieira, desenvolvedor full-stack"
-            placeholder="blur"
           />
         </Box>
         <Box css={{ flex: 1 }}>
