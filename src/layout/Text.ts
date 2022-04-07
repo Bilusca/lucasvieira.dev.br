@@ -5,7 +5,6 @@ export const Text = styled("p", {
   fontSize: "1rem",
   fontFamily: "$body",
   margin: "0 0 40px 0",
-  fontWeight: 500,
 
   "@bp1": {
     marginBottom: "20px",

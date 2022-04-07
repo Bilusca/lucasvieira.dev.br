@@ -71,6 +71,7 @@ export default function Home() {
           <Image
             src={LucasVieira}
             alt="Lucas Assis Vieira, desenvolvedor full-stack"
+            placeholder="blur"
           />
         </Box>
         <Box css={{ flex: 1 }}>

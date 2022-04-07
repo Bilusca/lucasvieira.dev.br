@@ -41,8 +41,8 @@ export const {
       purpleLighten: "#B667F1",
     },
     fonts: {
-      body: "Bitter, sans-serif",
-      heading: "Alfa Slab One, sans-serif",
+      body: "Bitter, serif",
+      heading: "Alfa Slab One, cursive",
     },
     radii: {
       borderRadius: "8px",
@@ -67,8 +67,7 @@ const globalStyles = globalCss({
   "html, body": {
     margin: "0",
     padding: "0",
-    backgroundColor: "$black",
-    backgroundSize: "cover",
+    background: "radial-gradient(circle, $black 90%, $purpleLighten 100%)",
     "@bp1": {
       fontSize: "87.5%;",
     },
@@ -78,6 +77,32 @@ const globalStyles = globalCss({
     minWidth: "100%",
     maxWidth: "100%",
   },
+  "@font-face": [
+    {
+      fontFamily: "Alfa Slab One",
+      src: `url("/static/font/AlfaSlabOne-Regular.ttf")`,
+      fontWeight: 400,
+      fontStyle: "normal",
+    },
+    {
+      fontFamily: "Bitter",
+      src: `url("/static/font/Bitter-Regular.ttf")`,
+      fontWeight: 500,
+      fontStyle: "normal",
+    },
+    {
+      fontFamily: "Bitter",
+      src: `url("/static/font/Bitter-SemiBold.ttf")`,
+      fontWeight: 600,
+      fontStyle: "normal",
+    },
+    {
+      fontFamily: "Bitter",
+      src: `url("/static/font/Bitter-Bold.ttf")`,
+      fontWeight: 700,
+      fontStyle: "normal",
+    },
+  ],
 });
 
 globalStyles();
