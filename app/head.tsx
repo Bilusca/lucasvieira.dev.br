@@ -27,6 +27,19 @@ export default function Head() {
         content="initial-scale=1.0, width=device-width"
       ></meta>
       <NextSeo {...NEXT_SEO_DEFAULT} useAppDir={true} />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.lucasvieira.dev/" />
+      <meta property="og:title" content="Lucas Vieira | Fullstack Developer 👨‍💻" />
+      <meta property="og:description" content="Desenvolvedor fullstack, com mais de 7 anos de experiência." />
+      <meta property="og:image" content="https://www.lucasvieira.dev/api/og" />
+
+
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://www.lucasvieira.dev/" />
+      <meta property="twitter:title" content="Lucas Vieira | Fullstack Developer 👨‍💻" />
+      <meta property="twitter:description" content="Desenvolvedor fullstack, com mais de 7 anos de experiência." />
+      <meta property="twitter:image" content="https://www.lucasvieira.dev/api/og" />
     </head>
   )
 }
