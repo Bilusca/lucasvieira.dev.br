@@ -15,11 +15,7 @@ export const NEXT_SEO_DEFAULT: NextSeoProps = {
     images: [
       {
         url: `${url}api/og`,
-        width: 1200,
-        height: 630,
-        alt: 'Og Image Alt A',
-        type: 'image/jpeg',
-        secureUrl: `${url}api/og`,
+        alt: 'Imagem do desenvolvedor Lucas Vieira',
       },
     ],
     siteName: 'Lucas Vieira | Fullstack Developer',
