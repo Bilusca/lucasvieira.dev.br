@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pause-on-hover: running;
+  --pause-on-click: running;
+  --play: running;
+  --direction: normal;
+  --duration: 51.3675s;
+  --delay: 0s;
+  --iteration-count: infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+* {
+  @apply tracking-tight outline-none text-base scroll-smooth;
+}
+
+a,
+button {
+  @apply cursor-pointer;
+}
+
+.text-shadow-purple {
+  text-shadow: 4px 4px 0px #c383fb;
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  animation-play-state: var(--play);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+}
+
+.marquee-container {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+}
