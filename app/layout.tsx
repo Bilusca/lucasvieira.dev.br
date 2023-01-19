@@ -3,6 +3,10 @@ import './globals.css'
 import { Fira_Code } from '@next/font/google'
 
 import { Header } from './components/Header'
+import { Footer } from './components/Footer'
+import { Hero } from './components/Hero'
+import { About } from './components/About'
+import { AnimatedSection } from './components/AnimatedSection'
 
 const firaCode = Fira_Code({
   weight: ['400', '700'],
@@ -20,7 +24,11 @@ export default function RootLayout({
       <head />
       <body className={`${firaCode.variable} font-mono`} >
         <Header />
+        <Hero />
+        <About />
+        <AnimatedSection />
         {children}
+        <Footer />
       </body>
     </html>
   )
