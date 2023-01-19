@@ -6,26 +6,26 @@ import { BlogSection } from "./components/BlogSection";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 
-async function getData() {
-  const res = await fetch(`http://localhost:3000/api/blog/get`);
+// async function getData() {
+//   const res = await fetch(`http://localhost:3000/api/blog/get`);
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data');
+//   }
 
-  return res.json()
-}
+//   return res.json()
+// }
 
 
 export default async function Page() {
-  const data = await getData();
+  // const data = await getData();
 
   return (
     <>
       <Hero />
       <About />
       <AnimatedSection />
-      <BlogSection data={data} />
+      <BlogSection />
       <Footer />
     </>
   )
