@@ -4,12 +4,12 @@ import { checkEnvUrl } from '../../lib/checkEnvUrl'
 
 
 export const config = {
-  runtime: 'experimental-edge',
+  runtime: 'edge',
 }
 
 export default async function handle() {
   const url = checkEnvUrl()
-  const coverBg = `${url}static/images/my-picture.png`
+  const coverBg = `${url}static/images/my-picture.jpg`
 
   return new ImageResponse(
     (
@@ -24,9 +24,11 @@ export default async function handle() {
           backgroundColor: 'white',
         }}
       >
-        <div tw="flex bg-white w-full h-full p-20 bg-gray-900">
+        <div tw="flex items-center bg-white w-full h-full p-20 bg-gray-900">
 
-          <img src={coverBg} alt="" style={{ width: 350 }} />
+          <div tw="flex items-center justify-center w-[300px] h-[300px] border-[3px] border-[#c383fb] rounded-full ">
+            <img src={coverBg} alt="" style={{ width: 280, height: 280, display: 'flex', objectFit: 'contain', borderRadius: '9999px' }} />
+          </div>
           <div tw="ml-10 flex flex-col my-auto">
             <h1 tw="text-8xl font-bold tracking-tighter mb-10 text-white">
               Lucas Vieira
