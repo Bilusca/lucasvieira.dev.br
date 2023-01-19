@@ -42,6 +42,7 @@ export default async function handle() {
     {
       width: 1200,
       height: 630,
+      emoji: 'blobmoji'
     },
   )
 }
