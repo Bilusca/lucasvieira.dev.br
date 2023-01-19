@@ -5,6 +5,15 @@ import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 export default function Head() {
   return (
     <head>
+      <Script id="GA" strategy="beforeInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-KFYX5SLKR0" />
+      <Script id="GA-TAG" strategy="beforeInteractive">{
+        `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KFYX5SLKR0');
+      `}</Script>
       <Script id="gtm" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
