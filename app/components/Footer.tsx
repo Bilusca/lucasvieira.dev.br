@@ -2,7 +2,7 @@ import { LogoBox } from "./client-components/LogoBox";
 
 export function Footer() {
   return (
-    <footer className="bg-black py-4 px-6 lg:px-0">
+    <footer className="bg-black py-4 px-6 lg:px-4">
       <div className="flex flex-col lg:flex-row items-center justify-between container mx-auto">
         <span className="text-sm italic text-white mb-5 lg:mb-0">Feito com <a className="text-base font-bold hover:text-app-purple" href="https://nextjs.org/" target="_blank" rel="noreferrer">Next.js</a> e 💜</span>
         <ul className="flex items-center gap-6 text-white text-sm">

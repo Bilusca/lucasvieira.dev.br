@@ -4,7 +4,7 @@ import AboutIMG from '../../public/static/images/about-picture.png';
 
 export function About() {
   return (
-    <section className="bg-black py-36 -mt-20 px-6 lg:px-0">
+    <section className="bg-black py-36 -mt-20 px-6 lg:px-4">
       <div className="container mx-auto flex flex-col md:flex-row justify-between">
         <div className="w-full lg:w-5/12 mb-10 lg:mb-0">
           <Image src={AboutIMG} alt="" placeholder="blur" />
