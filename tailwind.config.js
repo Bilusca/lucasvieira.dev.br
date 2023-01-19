@@ -36,10 +36,40 @@ module.exports = {
           '100%': {
             transform: 'translate(0)'
           }
+        },
+        nodejs: {
+          '0%': {
+            transform: 'translate(0)'
+          },
+          '50%': {
+            transform: 'translate(-3rem, 7rem)'
+          },
+          '75%': {
+            transform: 'translate(0, 5rem)'
+          },
+          '100%': {
+            transform: 'translate(0)'
+          }
+        },
+        react: {
+          '0%': {
+            transform: 'translate(0)'
+          },
+          '50%': {
+            transform: 'translate(5rem, 0)'
+          },
+          '75%': {
+            transform: 'translate(3.5rem, -5rem)'
+          },
+          '100%': {
+            transform: 'translate(0)'
+          }
         }
       },
       animation: {
-        js: 'js 10s ease-in-out infinite'
+        js: 'js 10s ease-in-out infinite',
+        nodejs: 'nodejs 7s ease-in-out infinite',
+        react: 'react 10s ease-in-out infinite',
       }
     },
   },

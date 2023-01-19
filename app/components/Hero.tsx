@@ -17,8 +17,8 @@ export function Hero() {
       <div className="flex w-12/12 lg:w-5/12 md:justify-end">
         <div className="relative z-10">
           <LogoBox name="js" className="w-[100px] h-[100px] bg-js absolute top-2 lg:top-10 lg:animate-js text-black border-[3px] border-black" size={65} />
-          <LogoBox name="react" className="w-[100px] h-[100px] bg-react absolute -bottom-6 left-[5%] text-black border-[3px] border-black" />
-          <LogoBox name="node" className="w-[100px] h-[100px] bg-nodejs absolute -right-2 lg:-right-7 top-2/4 text-black border-[3px] border-black" />
+          <LogoBox name="react" className="w-[100px] h-[100px] bg-react absolute -bottom-6 left-[5%] text-black border-[3px] border-black lg:animate-react" />
+          <LogoBox name="node" className="w-[100px] h-[100px] bg-nodejs absolute -right-2 lg:-right-7 top-2/4 text-black border-[3px] border-black lg:animate-nodejs" />
           <Image src={ProfilePicture} alt="" placeholder="blur" quality={100} />
         </div>
       </div>
