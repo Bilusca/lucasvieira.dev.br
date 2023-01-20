@@ -30,18 +30,18 @@ export default async function handle() {
             <img src={coverBg} alt="" style={{ width: 280, height: 280, display: 'flex', objectFit: 'contain', borderRadius: '9999px' }} />
           </div>
           <div tw="ml-10 flex flex-col my-auto">
-            <h1 tw="text-8xl font-bold tracking-tighter mb-10 text-white">
+            <h1 tw="text-6xl font-bold tracking-tighter mb-10 text-white">
               Lucas Vieira
             </h1>
-            <p tw="text-4xl text-white">Fullstack Developer 👨‍💻</p>
+            <p tw="text-2xl text-white">Fullstack Developer 👨‍💻</p>
           </div>
 
         </div>
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      width: 800,
+      height: 600,
       emoji: 'blobmoji'
     },
   )
