@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 import { ImageResponse } from '@vercel/og'
 import { checkEnvUrl } from '../../lib/checkEnvUrl'
 
@@ -7,7 +7,13 @@ export const config = {
   runtime: 'edge',
 }
 
+const fontURL = new URL('../../public/static/font/ka1.ttf', import.meta.url);
+
+const font = fetch(fontURL).then(res => res.arrayBuffer())
+
 export default async function handle() {
+  const fontData = await font;
+
   const url = checkEnvUrl()
   const coverBg = `${url}static/images/my-picture.jpg`
 
@@ -22,6 +28,7 @@ export default async function handle() {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: 'white',
+          fontFamily: 'Karmatic Arcade'
         }}
       >
         <div tw="flex items-center bg-white w-full h-full p-20 bg-gray-900">
@@ -30,10 +37,10 @@ export default async function handle() {
             <img src={coverBg} alt="" style={{ width: 280, height: 280, display: 'flex', objectFit: 'contain', borderRadius: '9999px' }} />
           </div>
           <div tw="ml-10 flex flex-col my-auto">
-            <h1 tw="text-6xl font-bold tracking-tighter mb-10 text-white">
+            <h1 tw="text-4xl font-bold mb-5 text-white">
               Lucas Vieira
             </h1>
-            <p tw="text-2xl text-white">Fullstack Developer 👨‍💻</p>
+            <p tw="text-xl text-white">Fullstack Developer 👨‍💻</p>
           </div>
 
         </div>
@@ -42,7 +49,14 @@ export default async function handle() {
     {
       width: 800,
       height: 600,
-      emoji: 'blobmoji'
+      emoji: 'blobmoji',
+      fonts: [
+        {
+          name: 'FirCode',
+          data: fontData,
+          style: 'normal'
+        }
+      ]
     },
   )
 }

@@ -1,0 +1,7 @@
+.article p {
+  @apply text-base lg:text-xl mb-10;
+}
+
+.article h3 {
+  @apply text-2xl lg:text-4xl mb-10 font-bold;
+}

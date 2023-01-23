@@ -11,7 +11,7 @@ export const NEXT_SEO_DEFAULT: NextSeoProps = {
     locale: 'pt_BR',
     url: url,
     title: 'Lucas Vieira | Fullstack Developer 👨‍💻',
-    description: 'Open Graph Description A',
+    description: 'Desenvolvedor fullstack, com mais de 7 anos de experiência.',
     images: [
       {
         url: `${url}api/og`,

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import ProfilePicture from '../../public/static/images/my-picture.png'
+import ProfilePicture from '../public/static/images/my-picture.png'
 import { LogoBox } from "./client-components/LogoBox";
 
 export function Hero() {
@@ -9,7 +9,7 @@ export function Hero() {
       <div className="flex gap-8 flex-col w-12/12 lg:w-6/12 items-start mb-20 lg:mb-0">
         <h1 className="text-shadow-purple font-bold text-6xl lg:text-8xl tracking-tighter">FullStack Developer</h1>
         <p className="font-base font-normal">Me chamo Lucas, desenvolvedor web desde 2014, com larga experiência em Javascript. Tenho experiência com <b>Node.JS</b>, <b>React.JS</b> e outras tecnologias baseadas em <b>Javascript</b>.</p>
-        <a href="https://wa.me/5562981602934?text=Ol%C3%A1%2C%20queria%20saber%20mais%20sobre%20seus%20servi%C3%A7os." target="_blank" className="flex items-center gap-2 lg:gap-6 basis-0 bg-app-purple p-5 border-[3px] border-black hover:shadow-app-black transition-all duration-500 rounded-[30px] group font-bold" rel="noreferrer">
+        <a href="https://wa.me/5562981602934?text=Ol%C3%A1%2C%20preciso%20de%20um%20site%2C%20ou%20software%20para%20minha%20empresa" target="_blank" className="flex items-center gap-2 lg:gap-6 basis-0 bg-app-purple p-5 border-[3px] border-black hover:shadow-app-black transition-all duration-500 rounded-[30px] group font-bold" rel="noreferrer">
           Fale comigo pelo WhatsApp
           <LogoBox name="whatsapp" size={15} className="w-[25px] h-[25px] bg-green-500 group-hover:shadow-app-black transition-all duration-1000 border border-black" color="#fff" />
         </a>

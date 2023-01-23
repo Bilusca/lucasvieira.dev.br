@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import AboutIMG from '../../public/static/images/about-picture.png';
+import AboutIMG from '../public/static/images/about-picture.png';
 
 export function About() {
   return (
