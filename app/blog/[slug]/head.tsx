@@ -2,6 +2,7 @@ import { gql } from "@apollo/client";
 import { NextSeo } from "next-seo";
 
 import { client } from "../../../lib/apolloClient";
+import { checkEnvUrl } from "../../../lib/checkEnvUrl";
 import { NEXT_SEO_DEFAULT } from "../../../next-seo.config";
 
 type BlogPostPageType = {
@@ -9,6 +10,8 @@ type BlogPostPageType = {
     slug: string
   }
 }
+
+const url = checkEnvUrl()
 
 async function getBlogPage(slug: string) {
   const { data } = await client.query({
@@ -25,6 +28,7 @@ async function getBlogPage(slug: string) {
 
   return data.blogModel[0]
 }
+
 export default async function Head({ params: { slug } }: BlogPostPageType) {
   const post = await getBlogPage(slug);
 
@@ -35,7 +39,15 @@ export default async function Head({ params: { slug } }: BlogPostPageType) {
     openGraph: {
       ...NEXT_SEO_DEFAULT.openGraph,
       title: `Lucas Vieira | ${post?.title}`,
-      description: post?.description
+      description: post?.description,
+      images: [
+        {
+          url: `${url}api/og-dynamic?title=${post?.title}&description=${post?.description}`,
+          width: 800,
+          height: 600,
+          alt: 'Imagem minha usada no hero com meu título',
+        },
+      ],
     }
   }
 
