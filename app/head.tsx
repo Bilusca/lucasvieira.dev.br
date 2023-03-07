@@ -1,10 +1,8 @@
-import { NextSeo } from "next-seo";
 import Script from "next/script";
-import { NEXT_SEO_DEFAULT } from "../next-seo.config";
 
 export default function Head() {
   return (
-    <head>
+    <>
       <Script id="GA" strategy="beforeInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-KFYX5SLKR0" />
       <Script id="GA-TAG" strategy="beforeInteractive">{
         `
@@ -26,13 +24,6 @@ export default function Head() {
         name="viewport"
         content="initial-scale=1.0, width=device-width"
       ></meta>
-      <NextSeo {...NEXT_SEO_DEFAULT} useAppDir={true} />
-
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://www.lucasvieira.dev/" />
-      <meta property="twitter:title" content="Lucas Vieira | Fullstack Developer 👨‍💻" />
-      <meta property="twitter:description" content="Desenvolvedor fullstack, com mais de 7 anos de experiência." />
-      <meta property="twitter:image" content="https://www.lucasvieira.dev/api/og" />
-    </head>
+    </>
   )
 }

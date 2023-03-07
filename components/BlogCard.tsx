@@ -8,7 +8,7 @@ export function BlogCard({ title, slug, description, coverImage }: BlogCardType)
   return (
     <Link className="group flex flex-col border-2 border-black hover:shadow-app-black transition-all duration-700 rounded-2xl max-w-[22.5rem]" href={`/blog/${slug}`} passHref={true}>
       <div className="relative w-full h-[17.25rem] border-b-2 border-black">
-        <img src={coverImage.url} className="rounded-t-xl h-full w-full" alt={title} />
+        <Image src={coverImage.url} className="rounded-t-xl h-full w-full object-cover" alt={title} width={coverImage.width} height={coverImage.height} />
       </div>
       <div className="py-6 px-4 flex flex-col gap-6">
         <h3 className="group-hover:text-app-purple text-3xl font-bold">{title}</h3>

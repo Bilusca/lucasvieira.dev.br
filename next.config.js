@@ -5,7 +5,14 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['media.graphassets.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'blog.lucasvieira.dev',
+        port: '',
+        pathname: '/uploads/**'
+      }
+    ]
   }
 }
 

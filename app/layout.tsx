@@ -4,9 +4,6 @@ import { Fira_Code } from '@next/font/google'
 
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { Hero } from '../components/Hero'
-import { About } from '../components/About'
-import { AnimatedSection } from '../components/AnimatedSection'
 
 const firaCode = Fira_Code({
   weight: ['400', '700'],
