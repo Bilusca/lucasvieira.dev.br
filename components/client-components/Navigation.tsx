@@ -16,11 +16,26 @@ export function Navigation() {
     <div className="relative">
       <nav className="hidden lg:block">
         <ul className="flex gap-7 items-center">
-
-          <li ><Link href="/" passHref={true} className="text-2xl font-medium hover:text-app-purple">Home</Link></li>
+          <li>
+            <Link
+              href="/"
+              passHref={true}
+              className="text-2xl font-medium hover:text-app-purple"
+            >
+              Home
+            </Link>
+          </li>
           {/* <li className="text-2xl font-medium">Sobre</li> */}
 
-          <li><Link href="/blog" className="text-2xl font-medium hover:text-app-purple" passHref={true}>Blog</Link></li>
+          <li>
+            <Link
+              href="/blog"
+              className="text-2xl font-medium hover:text-app-purple"
+              passHref={true}
+            >
+              Blog
+            </Link>
+          </li>
 
           {/* <li className="text-2xl font-medium">Contato</li> */}
         </ul>
