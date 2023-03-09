@@ -19,7 +19,7 @@ async function getBlogData() {
     ]
   }, { encodeValuesOnly: true })
 
-  const response = await fetch(`${process.env.STRAPI_ENDPOINT}/api/posts?${query}`, { cache: 'force-cache', next: { revalidate: 1 * 60 } })
+  const response = await fetch(`${process.env.STRAPI_ENDPOINT}/api/posts?${query}`, { cache: 'force-cache', next: { revalidate: 1 * 10 } })
   const { data } = await response.json()
 
   const posts = data.map((blog: any) => ({

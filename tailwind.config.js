@@ -17,7 +17,7 @@ module.exports = {
       },
       boxShadow: {
         'app-black': '5px 5px 0px #000000',
-        'app-picture': '16px 16px 0px #c383fb',
+        'app-picture': '5px 5px 0px #c383fb',
       },
       fontFamily: {
         mono: ['var(--fira-code)', ...fontFamily.mono]

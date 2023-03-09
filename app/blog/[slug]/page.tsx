@@ -3,6 +3,7 @@ import QueryString from "qs"
 
 import styles from './post.module.css'
 import { MarkdownReader } from "../../../components/client-components/MarkdownReader"
+import { notFound } from "next/navigation"
 
 
 type BlogPostPageType = {
@@ -26,8 +27,17 @@ async function getBlogPage(slug: string) {
     ]
   }, { encodeValuesOnly: true })
 
-  const response = await fetch(`${process.env.STRAPI_ENDPOINT}/api/posts?${query}`, { cache: 'force-cache', next: { revalidate: 1 * 60 } })
+  const response = await fetch(`${process.env.STRAPI_ENDPOINT}/api/posts?${query}`, { cache: 'force-cache', next: { revalidate: 1 * 10 } })
+
+  if (!response.ok) {
+    return undefined
+  }
+
   const { data } = await response.json()
+
+  if (!data.length) {
+    return undefined
+  }
 
   const post = {
     id: data[0].id,
@@ -47,6 +57,10 @@ async function getBlogPage(slug: string) {
 export async function generateMetadata({ params: { slug } }: BlogPostPageType): Promise<Metadata> {
   const post = await getBlogPage(slug)
 
+  if (!post) {
+    notFound()
+  }
+
   return {
     title: `Lucas Vieira | ${post.title}`,
     description: post.description,
@@ -54,7 +68,7 @@ export async function generateMetadata({ params: { slug } }: BlogPostPageType): 
       url: `https://www.lucasvieira.dev/blog/${post.slug}`,
       images: [{
         url: `https://www.lucasvieira.dev/api/og-dynamic?title=${post.title}&description=${post.description}`
-      }]
+      }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -63,15 +77,19 @@ export async function generateMetadata({ params: { slug } }: BlogPostPageType): 
       description: post.description,
       creator: '@BiluscaVieira',
       site: 'https://www.lucasvieira.dev'
-    }
+    },
   }
 }
 
 export default async function BlogPostPage({ params: { slug } }: BlogPostPageType) {
   const post = await getBlogPage(slug);
 
+  if (!post) {
+    notFound()
+  }
+
   return (
-    <div>
+    <>
       <div className="relative w-full h-28 lg:h-96 mb-10 border-2 border-black shadow-app-black bg-center bg-no-repeat bg-cover" style={{ backgroundImage: `url(${post?.coverImage.url})` }}>
 
       </div>
@@ -81,6 +99,6 @@ export default async function BlogPostPage({ params: { slug } }: BlogPostPageTyp
       <article className={styles.article}>
         <MarkdownReader content={post?.text} />
       </article>
-    </div>
+    </>
   )
 }

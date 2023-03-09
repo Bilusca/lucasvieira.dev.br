@@ -20,7 +20,7 @@ async function getBlogData() {
       ]
     }, { encodeValuesOnly: true })
 
-    const response = await fetch(`${process.env.STRAPI_ENDPOINT}/api/posts?${query}`, { cache: 'force-cache', next: { revalidate: 1 * 60 } })
+    const response = await fetch(`${process.env.STRAPI_ENDPOINT}/api/posts?${query}`, { cache: 'force-cache', next: { revalidate: 1 * 10 } })
     const { data } = await response.json()
 
     const posts: IBlogData[] = data.map((blog: any) => ({
@@ -50,7 +50,7 @@ export async function BlogSection() {
       <h3 className="text-center text-shadow-purple font-bold text-6xl lg:text-8xl tracking-tighter mb-20 lg:mb-40">Alguns artigos...</h3>
 
       {!!posts && posts.length > 0 ? (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-x-10">
           {posts.map(post => <BlogCard key={post.id} title={post.title} slug={post.slug} description={post.description} coverImage={post.coverImage} />)}
         </div>
       ) : (
