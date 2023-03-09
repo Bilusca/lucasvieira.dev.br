@@ -5,10 +5,10 @@ export default function Head() {
     <>
       <Script
         id="GA"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-KFYX5SLKR0"
       />
-      <Script id="GA-TAG" strategy="beforeInteractive">{`
+      <Script id="GA-TAG" strategy="afterInteractive">{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -27,6 +27,10 @@ export default function Head() {
         name="viewport"
         content="initial-scale=1.0, width=device-width"
       ></meta>
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
     </>
   )
 }

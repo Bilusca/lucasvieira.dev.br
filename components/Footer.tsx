@@ -22,6 +22,8 @@ export function Footer() {
               href="https://github.com/Bilusca"
               target="_blank"
               rel="noreferrer"
+              aria-label="Link para o meu Github"
+              title="Link para o meu Github"
             >
               <LogoBox
                 className="border-[2px] border-white p-2 hover:shadow-[2px_2px_0] hover:shadow-app-purple hover:border-app-purple transition-all duration-300 text-white hover:text-app-purple"
@@ -35,6 +37,8 @@ export function Footer() {
               href="https://www.linkedin.com/in/lucas-assis-vieira/"
               target="_blank"
               rel="noreferrer"
+              aria-label="Link para o meu Linkedin"
+              title="Link para o meu Linkedin"
             >
               <LogoBox
                 className="border-[2px] border-white p-2 hover:shadow-[2px_2px_0] hover:shadow-app-purple hover:border-app-purple transition-all duration-300 text-white hover:text-app-purple"
@@ -48,6 +52,8 @@ export function Footer() {
               href="https://www.instagram.com/bilusca/"
               target="_blank"
               rel="noreferrer"
+              aria-label="Link para o meu Instagram"
+              title="Link para o meu Instagram"
             >
               <LogoBox
                 className="border-[2px] border-white p-2 hover:shadow-[2px_2px_0] hover:shadow-app-purple hover:border-app-purple transition-all duration-300 text-white hover:text-app-purple"

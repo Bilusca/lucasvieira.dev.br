@@ -16,19 +16,21 @@ export function Navigation() {
     <div className="relative">
       <nav className="hidden lg:block">
         <ul className="flex gap-7 items-center">
-          <Link href="/" passHref={true}>
-            <li className="text-2xl font-medium hover:text-app-purple">Home</li>
-          </Link>
+
+          <li ><Link href="/" passHref={true} className="text-2xl font-medium hover:text-app-purple">Home</Link></li>
           {/* <li className="text-2xl font-medium">Sobre</li> */}
-          <Link href="/blog" passHref={true}>
-            <li className="text-2xl font-medium hover:text-app-purple">Blog</li>
-          </Link>
+
+          <li><Link href="/blog" className="text-2xl font-medium hover:text-app-purple" passHref={true}>Blog</Link></li>
+
           {/* <li className="text-2xl font-medium">Contato</li> */}
         </ul>
       </nav>
       <button
         className="flex lg:hidden items-center justify-center p-1 border border-black"
         onClick={handleMenu}
+        role="button"
+        title="Botão do menu"
+        aria-label="Botão do menu"
       >
         <AiOutlineMenu size={20} color="#000" />
       </button>
