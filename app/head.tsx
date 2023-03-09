@@ -27,6 +27,7 @@ export default function Head() {
         name="viewport"
         content="initial-scale=1.0, width=device-width"
       ></meta>
+      <meta name="theme-color" content="#c383fb" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

@@ -21,6 +21,8 @@ export function Navigation() {
               href="/"
               passHref={true}
               className="text-2xl font-medium hover:text-app-purple"
+              title="Home"
+              aria-label="Link para a Home"
             >
               Home
             </Link>
@@ -32,6 +34,8 @@ export function Navigation() {
               href="/blog"
               className="text-2xl font-medium hover:text-app-purple"
               passHref={true}
+              title="Blog"
+              aria-label="Link para o Blog"
             >
               Blog
             </Link>
@@ -56,17 +60,34 @@ export function Navigation() {
         <button
           onClick={handleMenu}
           className="p-1 items-center justify-center border border-black flex ml-auto mb-5"
+          role="button"
+          title="Botão de fechar o menu"
+          aria-label="Botão de fechar o menu"
         >
           <AiOutlineClose size={20} color="#000" />
         </button>
         <ul className="flex flex-col gap-4 items-center">
-          <Link passHref={true} href="/" onClick={handleMenu}>
-            <li className="text-2xl font-medium">Home</li>
-          </Link>
+          <li>
+            <Link
+              className="text-2xl font-medium"
+              passHref={true}
+              href="/"
+              onClick={handleMenu}
+            >
+              Home
+            </Link>
+          </li>
           {/* <li className="text-2xl font-medium">Sobre</li> */}
-          <Link passHref={true} href="/blog" onClick={handleMenu}>
-            <li className="text-2xl font-medium">Blog</li>
-          </Link>
+          <li>
+            <Link
+              className="text-2xl font-medium"
+              passHref={true}
+              href="/blog"
+              onClick={handleMenu}
+            >
+              Blog
+            </Link>
+          </li>
           {/* <li className="text-2xl font-medium">Contato</li> */}
         </ul>
       </nav>
