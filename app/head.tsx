@@ -1,11 +1,14 @@
-import Script from "next/script";
+import Script from 'next/script'
 
 export default function Head() {
   return (
     <>
-      <Script id="GA" strategy="beforeInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-KFYX5SLKR0" />
-      <Script id="GA-TAG" strategy="beforeInteractive">{
-        `
+      <Script
+        id="GA"
+        strategy="beforeInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-KFYX5SLKR0"
+      />
+      <Script id="GA-TAG" strategy="beforeInteractive">{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());

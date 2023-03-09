@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Navigation } from "./client-components/Navigation";
-import { Logo } from "./Logo";
+import Link from 'next/link'
+import { Navigation } from './client-components/Navigation'
+import { Logo } from './Logo'
 
 export function Header() {
   return (

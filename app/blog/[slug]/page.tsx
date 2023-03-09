@@ -1,10 +1,9 @@
-import { Metadata } from "next"
-import QueryString from "qs"
+import { Metadata } from 'next'
+import QueryString from 'qs'
 
 import styles from './post.module.css'
-import { MarkdownReader } from "../../../components/client-components/MarkdownReader"
-import { notFound } from "next/navigation"
-
+import { MarkdownReader } from '../../../components/client-components/MarkdownReader'
+import { notFound } from 'next/navigation'
 
 type BlogPostPageType = {
   params: {
@@ -13,21 +12,27 @@ type BlogPostPageType = {
 }
 
 async function getBlogPage(slug: string) {
-  const query = QueryString.stringify({
-    filters: {
-      slug: {
-        $eq: slug
-      }
+  const query = QueryString.stringify(
+    {
+      filters: {
+        slug: {
+          $eq: slug,
+        },
+      },
+      populate: [
+        'Seo',
+        'Seo.sharedImage',
+        'Seo.sharedImage.media',
+        'Seo.sharedImage.alt',
+      ],
     },
-    populate: [
-      'Seo',
-      'Seo.sharedImage',
-      'Seo.sharedImage.media',
-      'Seo.sharedImage.alt',
-    ]
-  }, { encodeValuesOnly: true })
+    { encodeValuesOnly: true },
+  )
 
-  const response = await fetch(`${process.env.STRAPI_ENDPOINT}/api/posts?${query}`, { cache: 'force-cache', next: { revalidate: 1 * 10 } })
+  const response = await fetch(
+    `${process.env.STRAPI_ENDPOINT}/api/posts?${query}`,
+    { cache: 'force-cache', next: { revalidate: 1 * 10 } },
+  )
 
   if (!response.ok) {
     return undefined
@@ -48,13 +53,15 @@ async function getBlogPage(slug: string) {
     coverImage: {
       url: `${process.env.STRAPI_ENDPOINT}${data[0].attributes.Seo.sharedImage.media.data.attributes.formats.medium.url}`,
     },
-    createdAt: data[0].attributes.createdAt
+    createdAt: data[0].attributes.createdAt,
   }
 
   return post
 }
 
-export async function generateMetadata({ params: { slug } }: BlogPostPageType): Promise<Metadata> {
+export async function generateMetadata({
+  params: { slug },
+}: BlogPostPageType): Promise<Metadata> {
   const post = await getBlogPage(slug)
 
   if (!post) {
@@ -66,9 +73,11 @@ export async function generateMetadata({ params: { slug } }: BlogPostPageType): 
     description: post.description,
     openGraph: {
       url: `https://www.lucasvieira.dev/blog/${post.slug}`,
-      images: [{
-        url: `https://www.lucasvieira.dev/api/og-dynamic?title=${post.title}&description=${post.description}`
-      }],
+      images: [
+        {
+          url: `https://www.lucasvieira.dev/api/og-dynamic?title=${post.title}&description=${post.description}`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -76,13 +85,15 @@ export async function generateMetadata({ params: { slug } }: BlogPostPageType): 
       title: `Lucas Vieira | ${post.title}`,
       description: post.description,
       creator: '@BiluscaVieira',
-      site: 'https://www.lucasvieira.dev'
+      site: 'https://www.lucasvieira.dev',
     },
   }
 }
 
-export default async function BlogPostPage({ params: { slug } }: BlogPostPageType) {
-  const post = await getBlogPage(slug);
+export default async function BlogPostPage({
+  params: { slug },
+}: BlogPostPageType) {
+  const post = await getBlogPage(slug)
 
   if (!post) {
     notFound()
@@ -90,12 +101,17 @@ export default async function BlogPostPage({ params: { slug } }: BlogPostPageTyp
 
   return (
     <>
-      <div className="relative w-full h-28 lg:h-96 mb-10 border-2 border-black shadow-app-black bg-center bg-no-repeat bg-cover" style={{ backgroundImage: `url(${post?.coverImage.url})` }}>
+      <div
+        className="relative w-full h-28 lg:h-96 mb-10 border-2 border-black shadow-app-black bg-center bg-no-repeat bg-cover"
+        style={{ backgroundImage: `url(${post?.coverImage.url})` }}
+      ></div>
 
-      </div>
-
-      <h1 className="text-4xl lg:text-6xl font-bold mb-10 lg:mb-12 text-shadow-purple">{post?.title}</h1>
-      <p className="italic text-lg lg:text-2xl mb-8 lg:mb-12">{post?.description}</p>
+      <h1 className="text-4xl lg:text-6xl font-bold mb-10 lg:mb-12 text-shadow-purple">
+        {post?.title}
+      </h1>
+      <p className="italic text-lg lg:text-2xl mb-8 lg:mb-12">
+        {post?.description}
+      </p>
       <article className={styles.article}>
         <MarkdownReader content={post?.text} />
       </article>

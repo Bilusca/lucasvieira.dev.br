@@ -1,7 +1,16 @@
+import { BlankCard } from '../../components/BlankCard'
+
 export default function Loading() {
   return (
-    <div className="container mx-auto py-48 h-full shadow-app-black border-2 border-black animate-pulse">
-      <h1 className="text-4xl lg:text-6xl font-bold mb-10 lg:mb-12 text-shadow-purple">Carregando os Posts...</h1>
-    </div>
+    <main>
+      <h1 className="text-center text-shadow-purple font-bold text-6xl lg:text-8xl tracking-tighter mb-20 lg:mb-40">
+        Artigos no site
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10">
+        <BlankCard />
+        <BlankCard />
+        <BlankCard />
+      </div>
+    </main>
   )
 }
